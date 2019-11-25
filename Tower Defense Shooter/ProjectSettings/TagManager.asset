@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player Damage
+  - Enemy Health
   - 
   - 
   - 
@@ -40,4 +40,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 603629115
+    locked: 0
+  - name: Player
+    uniqueID: 801618085
+    locked: 0
+  - name: Enemies
+    uniqueID: 946342285
+    locked: 0
+  - name: FX
+    uniqueID: 2321500709
+    locked: 0
+  - name: Bullets
+    uniqueID: 3777764529
+    locked: 0
+  - name: Foreground
+    uniqueID: 1219215139
     locked: 0
