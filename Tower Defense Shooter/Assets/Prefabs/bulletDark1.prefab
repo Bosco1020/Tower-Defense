@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 169780296231497219}
   - component: {fileID: 8841687733142861607}
   - component: {fileID: -1247958667484333079}
+  - component: {fileID: 4492264586821350761}
+  - component: {fileID: -8925590798481967785}
   m_Layer: 8
   m_Name: bulletDark1
   m_TagString: Untagged
@@ -144,3 +146,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1500
   damage: 1
+--- !u!114 &4492264586821350761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39001314733072129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7edd4e26211b84d95f437d9272aecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 4
+  counter: 4
+  repeat: 0
+  onTimerComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -8925590798481967785}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &-8925590798481967785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39001314733072129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f405d9293e676984c828ab7739dd6324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
