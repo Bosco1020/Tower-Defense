@@ -1994,6 +1994,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 793889690857516292, guid: b3392b8531ae33c4cb118408cdcc3f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 793889690857516289, guid: b3392b8531ae33c4cb118408cdcc3f93,
         type: 3}
       propertyPath: m_LocalPosition.x
