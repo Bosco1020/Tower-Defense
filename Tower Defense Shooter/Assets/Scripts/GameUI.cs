@@ -7,6 +7,7 @@ public class GameUI : MonoBehaviour
     public Text scoreText;
 
     public int playerScore = 0;
+    public int minutes = 0;
     private void OnEnable()
     {
         Player.OnUpdateHealth += UpdateHealthBar;
@@ -28,6 +29,13 @@ public class GameUI : MonoBehaviour
     private void UpdateScore(int theScore)
     {
         playerScore += theScore;
-        scoreText.text = "SCORE: " + playerScore.ToString();
+
+        if (playerScore == 60)
+        {
+            minutes = minutes + 1;
+            playerScore = 0;
+        }
+
+        scoreText.text = minutes.ToString() + ":" + playerScore.ToString("00");
     }
 }

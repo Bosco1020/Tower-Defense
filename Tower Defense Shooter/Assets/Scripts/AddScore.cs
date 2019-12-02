@@ -7,7 +7,7 @@ public class AddScore : MonoBehaviour
     public delegate void SendScore(int theScore);
     public static event SendScore OnSendScore;
 
-    public int score = 10;
+    public int score = 1;
     
     private void OnDestroy()
     {
@@ -15,5 +15,10 @@ public class AddScore : MonoBehaviour
         {
             OnSendScore(score);
         }
+    }
+
+    public void UpdateScore()
+    {
+        OnSendScore(score);
     }
 }

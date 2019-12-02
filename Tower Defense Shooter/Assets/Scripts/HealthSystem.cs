@@ -15,7 +15,10 @@ public class HealthSystem : MonoBehaviour
     {
         health -= damage;
 
-        onDamaged.Invoke(health);
+        if (health > 0)
+        {
+            onDamaged.Invoke(health);
+        }
 
         if (health < 1)
         {

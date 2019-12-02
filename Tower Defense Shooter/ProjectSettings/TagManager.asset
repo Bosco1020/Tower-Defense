@@ -15,8 +15,8 @@ TagManager:
   - 
   - Player Damage
   - Enemy Health
-  - 
-  - 
+  - Player Health
+  - Enemy Damage
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 603629115
+    locked: 0
+  - name: Objects
+    uniqueID: 2407648481
     locked: 0
   - name: Player
     uniqueID: 801618085
