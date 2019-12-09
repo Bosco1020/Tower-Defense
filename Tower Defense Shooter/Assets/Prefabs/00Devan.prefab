@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3164273748061098456}
   - component: {fileID: 3164273748061098463}
   - component: {fileID: 3164273748061098460}
+  - component: {fileID: -5465114269114327838}
   - component: {fileID: 4145558481180728967}
   - component: {fileID: 850686079}
   - component: {fileID: -4272166238579145871}
@@ -193,6 +194,39 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 6871815473122876347, guid: 9eec249fdb0ad474c9961e1a0e5a1218,
     type: 3}
   adjustmentAngle: 0
+--- !u!114 &-5465114269114327838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3164273748061098455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981422298824d034e91c5b015d6999a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 1
+  Target: 4000000
+  target: {fileID: 0}
+  self: {fileID: 3164273748061098461}
+  repeat: 1
+  onTimerComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3292441286188037619}
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &4145558481180728967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +306,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3164273748061098455}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d7edd4e26211b84d95f437d9272aecd, type: 3}
   m_Name: 
@@ -358,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  repathRate: 0.5
+  repathRate: 0.2
   canSearch: 1
   canMove: 1
   speed: 1
@@ -383,8 +417,8 @@ MonoBehaviour:
   version: 1
   smoothType: 0
   subdivisions: 2
-  iterations: 2
-  strength: 0.5
+  iterations: 5
+  strength: 0.47
   uniformLength: 0
   maxSegmentLength: 2
   bezierTangentLength: 0.4
