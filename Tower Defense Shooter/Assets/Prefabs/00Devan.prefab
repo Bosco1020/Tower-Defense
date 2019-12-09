@@ -207,9 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 1
-  Target: 4000000
-  target: {fileID: 0}
-  self: {fileID: 3164273748061098461}
+  Target: 10
+  target: {fileID: 6016729197265540322, guid: f37a604271b0105499b924cd25f8657e, type: 3}
   repeat: 1
   onTimerComplete:
     m_PersistentCalls:
@@ -392,15 +391,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  repathRate: 0.2
+  repathRate: 0.5
   canSearch: 1
   canMove: 1
   speed: 1
   orientation: 1
   enableRotation: 1
-  rotationSpeed: 3
+  rotationSpeed: 10
   interpolatePathSwitches: 1
-  switchPathInterpolationSpeed: 5
+  switchPathInterpolationSpeed: 3
   targetCompatibility: {fileID: 0}
 --- !u!114 &1975994738776255859
 MonoBehaviour:

@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class DistanceTimerEvent : MonoBehaviour
 {
-    public float time = 5, Target = 4;
+    public float time = 5, Target = 4.0f;
     private float Distance;
-    public Transform target, self;
+    public Transform target;
     public bool repeat = false;
     public UnityEvent onTimerComplete;
 
@@ -15,17 +15,20 @@ public class DistanceTimerEvent : MonoBehaviour
     {
         if (repeat)
         {
-            Distance = Vector3.Distance(target.position, self.position);
             if (Distance < Target)
             {
                 InvokeRepeating("OnTimerComplete", 0, time);
             }
-            
         }
         else
         {
             Invoke("OnTimerComplete", time);
         }
+    }
+
+    public void Update()
+    {
+        Distance = Vector3.Distance(target.transform.position, transform.position);
     }
 
     public void SetTarget(Transform newTarget)
@@ -35,6 +38,9 @@ public class DistanceTimerEvent : MonoBehaviour
 
     private void OnTimerComplete()
     {
-        onTimerComplete.Invoke();
+        if (Distance < Target)
+        {
+            onTimerComplete.Invoke();
+        }
     }
 }
