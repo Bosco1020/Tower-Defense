@@ -16,27 +16,24 @@ public class TurretWeapon : MonoBehaviour
 
     private void Fire()
     {
-        while (isFiring == true)
+        isFiring = true;
+
+        Instantiate(bulletDark1Prefab, bulletSpawn.position, bulletSpawn.rotation);
+
+        if (GetComponent<AudioSource>() != null)
         {
-            Instantiate(bulletDark1Prefab, bulletSpawn.position, bulletSpawn.rotation);
-
-            if (GetComponent<AudioSource>() != null)
-            {
-                GetComponent<AudioSource>().Play();
-            }
-
-            Invoke("SetFiring", fireTime);
+            GetComponent<AudioSource>().Play();
         }
     }
 
     public void Shoot()
     {
-        isFiring = true;
-        Fire();
+        InvokeRepeating("Fire", 0.5f, fireTime);
     }
 
     public void Stop()
     {
         isFiring = false;
+        CancelInvoke();
     }
 }

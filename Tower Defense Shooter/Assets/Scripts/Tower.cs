@@ -12,10 +12,12 @@ public class Tower : MonoBehaviour
     public float smoothing = 5f, adjustmentAngle = 0.0f;
     public UnityEvent onTargetObtained;
     public UnityEvent onNoTarget;
+    private bool stilltargeting = false;
     
+
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.25f);
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
     void UpdateTarget()
@@ -37,7 +39,6 @@ public class Tower : MonoBehaviour
         if (NearestEnemy != null && shortestDistance <= range)
         {
             target = NearestEnemy.transform;
-            onTargetObtained.Invoke();
         }
         else
         {
@@ -53,9 +54,15 @@ public class Tower : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
+        if (target == null && stilltargeting == true)
         {
             onNoTarget.Invoke();
+            stilltargeting = false;
+        }
+        if (target == true && stilltargeting == false)
+        {
+            onTargetObtained.Invoke();
+            stilltargeting = true;
         }
 
         Vector3 difference = target.position - transform.position;
