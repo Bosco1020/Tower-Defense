@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 793889690857516290}
   - component: {fileID: 793889690857516291}
   - component: {fileID: 238651030547966367}
-  m_Layer: 4
+  m_Layer: 12
   m_Name: Big Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
