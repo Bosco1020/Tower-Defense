@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 69433522}
   - component: {fileID: 69433521}
   - component: {fileID: 69433524}
+  - component: {fileID: 69433523}
   m_Layer: 13
   m_Name: GameObject
   m_TagString: Untagged
@@ -151,10 +152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
-  enemyTag: Player
+  enemyTag: Enemy
   partToRotate: {fileID: 307724896}
-  smoothing: 20
+  smoothing: 200
   adjustmentAngle: -90
+  onTargetObtained:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onNoTarget:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &69433522
 Transform:
   m_ObjectHideFlags: 0
@@ -168,9 +179,26 @@ Transform:
   m_Children:
   - {fileID: 1912771911}
   - {fileID: 307724896}
+  - {fileID: 2012681158}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &69433523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69433520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67085da19414196499b5d955823366c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletDark1Prefab: {fileID: 39001314733072129, guid: ba1932ebb33753646b690f482fcdc2dc,
+    type: 3}
+  bulletSpawn: {fileID: 2012681158}
+  fireTime: 1
 --- !u!61 &69433524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -431,6 +459,16 @@ MonoBehaviour:
   partToRotate: {fileID: 0}
   smoothing: 5
   adjustmentAngle: 0
+  onTargetObtained:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onNoTarget:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &304581161
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7007,6 +7045,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2012681157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2012681158}
+  m_Layer: 13
+  m_Name: Bullet Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2012681158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012681157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.748, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 69433522}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6016729197062790409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7014,6 +7082,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6016729197265540335, guid: f37a604271b0105499b924cd25f8657e,
+        type: 3}
+      propertyPath: m_Name
+      value: survivor
+      objectReference: {fileID: 0}
     - target: {fileID: 6016729197265540322, guid: f37a604271b0105499b924cd25f8657e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7068,11 +7141,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016729197265540335, guid: f37a604271b0105499b924cd25f8657e,
-        type: 3}
-      propertyPath: m_Name
-      value: survivor
       objectReference: {fileID: 0}
     - target: {fileID: 6016729197265540325, guid: f37a604271b0105499b924cd25f8657e,
         type: 3}

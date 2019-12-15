@@ -10,10 +10,12 @@ public class Tower : MonoBehaviour
     public string enemyTag = "Enemy";
     public Transform partToRotate;
     public float smoothing = 5f, adjustmentAngle = 0.0f;
+    public UnityEvent onTargetObtained;
+    public UnityEvent onNoTarget;
     
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.25f);
     }
 
     void UpdateTarget()
@@ -35,6 +37,7 @@ public class Tower : MonoBehaviour
         if (NearestEnemy != null && shortestDistance <= range)
         {
             target = NearestEnemy.transform;
+            onTargetObtained.Invoke();
         }
         else
         {
@@ -51,7 +54,9 @@ public class Tower : MonoBehaviour
     void Update()
     {
         if (target == null)
-            return;
+        {
+            onNoTarget.Invoke();
+        }
 
         Vector3 difference = target.position - transform.position;
         float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
