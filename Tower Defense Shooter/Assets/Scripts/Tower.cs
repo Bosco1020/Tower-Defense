@@ -59,10 +59,14 @@ public class Tower : MonoBehaviour
             onNoTarget.Invoke();
             stilltargeting = false;
         }
-        if (target == true && stilltargeting == false)
+        else if (target == true && stilltargeting == false)
         {
             onTargetObtained.Invoke();
             stilltargeting = true;
+        }
+        else if (target == null)
+        {
+            return;
         }
 
         Vector3 difference = target.position - transform.position;
