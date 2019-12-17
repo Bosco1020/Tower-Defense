@@ -64,15 +64,13 @@ public class Tower : MonoBehaviour
             onTargetObtained.Invoke();
             stilltargeting = true;
         }
-        else if (target == null)
+        else if (target == true)
         {
-            return;
+            Vector3 difference = target.position - transform.position;
+            float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            Quaternion newRot = Quaternion.Euler(new Vector3(0.0f, 0.0f, rotz + adjustmentAngle));
+            partToRotate.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * smoothing);
         }
-
-        Vector3 difference = target.position - transform.position;
-        float rotz = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        Quaternion newRot = Quaternion.Euler(new Vector3(0.0f, 0.0f, rotz + adjustmentAngle));
-        partToRotate.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * smoothing);
-
+        else return;
     }
 }

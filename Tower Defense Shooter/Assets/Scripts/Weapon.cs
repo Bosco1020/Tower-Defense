@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     public Transform bulletSpawn;
     public float fireTime = 0.5f;
 
-    private bool isFiring = false;
+    private bool isFiring = false, TowerSpawn = false;
 
     private void SetFiring()
     {
@@ -32,13 +32,20 @@ public class Weapon : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
-            if(!isFiring)
+            if(!isFiring && TowerSpawn == false)
             {
                 Fire();
             }
         }
     }
-
+    public void Spawning()
+    {
+        TowerSpawn = true;
+    }
+    public void NotSpawning()
+    {
+        TowerSpawn = false;
+    }
     public void Shoot()
     {
         Fire();
