@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 1000.0f;
     public int damage = 1;
+    public UnityEvent OnHit;
 
     private void Start()
     {
@@ -15,6 +17,7 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+        OnHit.Invoke();
         Die();
     }
     private void OnBecomeInvisible()

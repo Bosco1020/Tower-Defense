@@ -24,7 +24,6 @@ public class TowerSpawner : MonoBehaviour
     {
         if (ifClicked == true)
         {
-            Debug.Log("hit");
             spriteRenderer.color = Color.red;
             valid = false;
         }
@@ -33,7 +32,6 @@ public class TowerSpawner : MonoBehaviour
     {
         if (ifClicked == true)
         {
-            Debug.Log("miss");
             spriteRenderer.color = Color.white;
             valid = true;
         }

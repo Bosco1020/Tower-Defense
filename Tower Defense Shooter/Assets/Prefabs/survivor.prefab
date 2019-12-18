@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b4846c9f0319f4a95469a56af31966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite1: {fileID: 21300000, guid: f7d52d19bf26dc74bbf45b53ff246015, type: 3}
   bulletDark1Prefab: {fileID: 39001314733072129, guid: ba1932ebb33753646b690f482fcdc2dc,
     type: 3}
   bulletSpawn: {fileID: 6016729196514600183}
