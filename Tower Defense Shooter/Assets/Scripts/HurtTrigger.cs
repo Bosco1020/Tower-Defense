@@ -9,7 +9,7 @@ public class HurtTrigger : MonoBehaviour
     private bool contact = false;
     private void Start()
     {
-        InvokeRepeating("reset", 0f, resetTime);
+        InvokeRepeating("reset", 0.1f, resetTime);
     }
     private void OnTriggerEnter2D(CircleCollider2D other)
     {
@@ -26,6 +26,5 @@ public class HurtTrigger : MonoBehaviour
             GetComponent<CircleCollider2D>().enabled = true;
             Debug.Log("reset");
         }
-        Debug.Log("cycling");
     }
 }

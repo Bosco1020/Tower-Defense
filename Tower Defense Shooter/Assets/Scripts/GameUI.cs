@@ -4,14 +4,16 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
     public Slider healthBar;
-    public Text scoreText;
+    public Text scoreText, scrapText;
 
     public int playerScore = 0;
     public int minutes = 0;
+    public int Scrap = 0;
     private void OnEnable()
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
+        AddScrap.OnSendScrap += UpdateScrap;
     }
 
     
@@ -19,6 +21,7 @@ public class GameUI : MonoBehaviour
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
+        AddScrap.OnSendScrap -= UpdateScrap;
     }
 
     private void UpdateHealthBar(int health)
@@ -37,5 +40,11 @@ public class GameUI : MonoBehaviour
         }
 
         scoreText.text = minutes.ToString() + ":" + playerScore.ToString("00");
+    }
+
+    private void UpdateScrap(int theScrap)
+    {
+        Scrap = Scrap + theScrap;
+        scrapText.text = Scrap.ToString();
     }
 }
