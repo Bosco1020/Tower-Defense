@@ -152,7 +152,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  Target: {fileID: 0}
+  Target: Player
 --- !u!114 &1050004749329219231
 MonoBehaviour:
   m_ObjectHideFlags: 0

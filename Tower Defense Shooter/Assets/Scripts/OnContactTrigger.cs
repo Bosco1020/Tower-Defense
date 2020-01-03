@@ -6,15 +6,13 @@ using UnityEngine.Events;
 public class OnContactTrigger : MonoBehaviour
 {
     public UnityEvent OnCollision;
+    public string Target = "Player";
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("oof");
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == Target)
         {
-            Debug.Log("yay");
             OnCollision.Invoke();
         }
-        Debug.Log("oof");
     }
 }

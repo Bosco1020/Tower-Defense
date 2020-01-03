@@ -44,4 +44,11 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+    public void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        Time.timeScale = 1;
+    }
 }

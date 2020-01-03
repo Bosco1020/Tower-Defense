@@ -29,4 +29,9 @@ public class Player : MonoBehaviour
             OnUpdateHealth(health);
         }
     }
+
+    public void Die()
+    {
+        Time.timeScale = 0;
+    }
 }
