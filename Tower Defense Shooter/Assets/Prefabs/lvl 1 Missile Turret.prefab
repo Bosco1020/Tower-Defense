@@ -12,9 +12,13 @@ GameObject:
   - component: {fileID: 4899955771540586859}
   - component: {fileID: 4899955771540586862}
   - component: {fileID: 4899955771540586857}
+  - component: {fileID: 1076109378}
+  - component: {fileID: 1076109379}
+  - component: {fileID: 1076109380}
+  - component: {fileID: 1076109381}
   m_Layer: 13
-  m_Name: lvl 1 Turret
-  m_TagString: Untagged
+  m_Name: lvl 1 Missile Turret
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +151,7 @@ MonoBehaviour:
   bulletDark1Prefab: {fileID: 2025131731635977651, guid: 4512a9eeecfd96045a94c5c88eb6df89,
     type: 3}
   bulletSpawn: {fileID: 4899955772350867996}
-  fireTime: 1
+  fireTime: 1.5
   onShooting:
     m_PersistentCalls:
       m_Calls:
@@ -180,6 +184,96 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1076109378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899955771540586858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e55c4ed7e7cbd4cbfb25373c732fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrap: -50
+--- !u!114 &1076109379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899955771540586858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54298eca3f748604b9b9a567a0e66eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Upgrader:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1076109380}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1076109378}
+        m_MethodName: UpdateScrap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1076109381}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1076109380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899955771540586858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5f0de63cc385c4aa841ef19bcbbd8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 3889320445031195054, guid: d5f6a19293670c74ba8caa1a39b7c354,
+    type: 3}
+  adjustmentAngle: 0
+--- !u!114 &1076109381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899955771540586858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f405d9293e676984c828ab7739dd6324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4899955771908406149
 GameObject:
   m_ObjectHideFlags: 0

@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 10507000}
   m_Layer: 13
   m_Name: lvl 2 GattlingTurret
-  m_TagString: Untagged
+  m_TagString: TurrentFinal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2760e573f3ca68f4e93bf104441f5db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 4
+  range: 5
   enemyTag: Enemy
   partToRotate: {fileID: 1509197121447667909}
   smoothing: 200
@@ -261,6 +261,16 @@ MonoBehaviour:
     type: 3}
   bulletSpawn: {fileID: 1509197121890204003}
   fireTime: 0.8
+  onShooting:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onNotShooting:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &10507000
 MonoBehaviour:
   m_ObjectHideFlags: 0
