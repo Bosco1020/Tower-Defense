@@ -11,7 +11,22 @@ public class TopDownCharacterController : MonoBehaviour
         rigidbody2D = GetComponent < Rigidbody2D > ();
     }
 
-    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Oil")
+        {
+            speed = speed / 2;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Oil")
+        {
+            speed = speed * 2;
+        }
+    }
+
     void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");

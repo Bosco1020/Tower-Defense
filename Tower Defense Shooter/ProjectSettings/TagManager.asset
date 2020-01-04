@@ -9,6 +9,8 @@ TagManager:
   - Scrap
   - Turret
   - TurrentFinal
+  - Oil
+  - Spike
   layers:
   - Default
   - TransparentFX

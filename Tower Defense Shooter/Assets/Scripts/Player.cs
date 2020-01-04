@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     public static event UpdateHealth OnUpdateHealth;
 
     private Animator gunAnim;
+    
     private void Start()
     {
         gunAnim = GetComponent<Animator>();
