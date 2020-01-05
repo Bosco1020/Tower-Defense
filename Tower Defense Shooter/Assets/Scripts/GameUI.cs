@@ -6,11 +6,16 @@ public class GameUI : MonoBehaviour
 {
     public Slider healthBar;
     public Text scoreText, scrapText;
-    public UnityEvent TimerComplete;
+    public UnityEvent TimerComplete, NotEnoughFundsGatt, EnoughMoneyGatt, NotEnoughFundsMiss, EnoughMoneyMiss, NotEnoughFundsUpg, EnoughMoneyUpg;
 
     public int playerScore = 30;
     public int minutes = 5;
     public int Scrap = 0;
+    private bool firstGat = true, firstMiss = true, firstUpg = true;
+    private void Start()
+    {
+        ScrapUpdate();
+    }
     private void OnEnable()
     {
         Player.OnUpdateHealth += UpdateHealthBar;
@@ -52,5 +57,74 @@ public class GameUI : MonoBehaviour
     {
         Scrap = Scrap + theScrap;
         scrapText.text = Scrap.ToString();
+    }
+    public void ScrapUpdate()
+    {
+        scrapText.text = Scrap.ToString();
+    }
+
+    public void GattlingSpawn()
+    {
+        if (firstGat == true)
+        {
+            if (Scrap >= 20)
+            {
+                Scrap = Scrap - 20;
+                EnoughMoneyGatt.Invoke();
+            }
+            else
+            {
+                NotEnoughFundsGatt.Invoke();
+            }
+            firstGat = false;
+        }
+
+        else if(Scrap >= 40)
+        {
+            Scrap = Scrap - 40;
+            EnoughMoneyGatt.Invoke();
+        }
+        else
+        {
+            NotEnoughFundsGatt.Invoke();
+        }
+    }
+    public void MissileSpawn()
+    {
+        if (firstMiss == true)
+        {
+            if (Scrap >= 30)
+            {
+                Scrap = Scrap - 30;
+                EnoughMoneyMiss.Invoke();
+            }
+            else
+            {
+                NotEnoughFundsMiss.Invoke();
+            }
+            firstMiss = false;
+        }
+
+        else if (Scrap >= 60)
+        {
+            Scrap = Scrap - 60;
+            EnoughMoneyMiss.Invoke();
+        }
+        else
+        {
+            NotEnoughFundsMiss.Invoke();
+        }
+    }
+
+    public void UpgradeSpawn()
+    {
+        if (Scrap >= 100)
+        {
+            EnoughMoneyUpg.Invoke();
+        }
+        else
+        {
+            NotEnoughFundsUpg.Invoke();
+        }
     }
 }

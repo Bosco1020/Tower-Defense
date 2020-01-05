@@ -6,13 +6,10 @@ using UnityEngine.Events;
 public class Upgrader : MonoBehaviour
 {
     public Sprite sprite1;
-    public UnityEvent Upgrade, NoMoney;
-    public int Cost;
-    private int payment;
+    public UnityEvent Upgrade;
     private SpriteRenderer spriteRenderer;
     private bool ifClicked, valid;
-    private Collider2D selected = null;
-    private int num = 100;
+    private Collider2D target = null;
 
     void Start()
     {
@@ -24,12 +21,13 @@ public class Upgrader : MonoBehaviour
         ifClicked = true;
         valid = true;
         spriteRenderer.color = Color.red;
-        selected = null;
+        target = null;
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (ifClicked == true)
         {
+            target = null;
             spriteRenderer.color = Color.red;
             valid = false;
         }
@@ -40,7 +38,7 @@ public class Upgrader : MonoBehaviour
         {
             if (other.gameObject.tag == "Turret")
             {
-                selected = other;
+                target = other;
                 spriteRenderer.color = Color.white;
                 valid = true;
             }
@@ -49,19 +47,12 @@ public class Upgrader : MonoBehaviour
 
     private void Update()
     {
-        //num = int.Parse(scrapText.text);
-
         if (Input.GetMouseButton(0))
         {
-            if (valid == true && num >= Cost)
+            if (valid == true)
             {
+                target.transform.SendMessage("UpgradeSelected", target, SendMessageOptions.DontRequireReceiver);
                 Upgrade.Invoke();
-                payment = 0 - Cost;
-                selected.transform.SendMessage("UpgradeSelected", selected, SendMessageOptions.DontRequireReceiver);
-            }
-            else if (valid == true && num < Cost)
-            {
-                NoMoney.Invoke();
             }
         }
     }
