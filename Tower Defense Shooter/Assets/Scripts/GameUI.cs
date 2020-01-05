@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameUI : MonoBehaviour
 {
     public Slider healthBar;
     public Text scoreText, scrapText;
+    public UnityEvent TimerComplete;
 
-    public int playerScore = 0;
-    public int minutes = 0;
+    public int playerScore = 30;
+    public int minutes = 5;
     public int Scrap = 0;
     private void OnEnable()
     {
@@ -31,14 +33,18 @@ public class GameUI : MonoBehaviour
 
     private void UpdateScore(int theScore)
     {
-        playerScore += theScore;
+        playerScore +=  theScore;
 
-        if (playerScore == 60)
+        if(playerScore == 0f && minutes == 0f)
         {
-            minutes = minutes + 1;
-            playerScore = 0;
+            Time.timeScale = 0f;
+            TimerComplete.Invoke();
         }
-
+        else if (playerScore == -1f)
+        {
+            minutes = minutes - 1;
+            playerScore = 59;
+        }
         scoreText.text = minutes.ToString() + ":" + playerScore.ToString("00");
     }
 

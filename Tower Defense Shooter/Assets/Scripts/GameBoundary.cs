@@ -8,8 +8,8 @@ public class GameBoundary : MonoBehaviour
     private Transform target;
     public GameObject enemy;
     public float range = 25f;
-    public UnityEvent onOutOfBounds;
-    private bool waiting = true;
+    public UnityEvent onOutOfBounds, onReturn;
+    private bool waiting = false;
     private GameObject NearestEnemy = null;
 
     void Start()
@@ -22,12 +22,12 @@ public class GameBoundary : MonoBehaviour
     {
          float shortestDistance = Mathf.Infinity;
          float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+        distanceToEnemy = distanceToEnemy - 78;
          if (distanceToEnemy < shortestDistance)
          {
                 shortestDistance = distanceToEnemy;
                 NearestEnemy = enemy;
          }
-        
 
         if (NearestEnemy != null && shortestDistance <= range)
         {
@@ -47,14 +47,15 @@ public class GameBoundary : MonoBehaviour
 
     void Update()
     {
-        if (target == null)
+        if (target == null && waiting == false)
         {
             onOutOfBounds.Invoke();
-            Debug.Log("waaay");
+            waiting = true;
         }
-        else if (target != null)
+        else if (target != null && waiting == true)
         {
-            Debug.Log("gfdgdf");
+            onReturn.Invoke();
+            waiting = false;
         }
         else return;
     }
