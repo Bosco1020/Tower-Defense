@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Weapon : MonoBehaviour
     private Sprite sprite0;
     public GameObject bulletDark1Prefab;
     public Transform bulletSpawn;
+    public UnityEvent Firing;
     private SpriteRenderer spriteRenderer;
     public float fireTime = 0.5f;
 
@@ -26,6 +28,7 @@ public class Weapon : MonoBehaviour
     private void Fire()
     {
         isFiring = true;
+        Firing.Invoke();
         Instantiate(bulletDark1Prefab, bulletSpawn.position, bulletSpawn.rotation);
 
         if(GetComponent<AudioSource>() != null)
