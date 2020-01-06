@@ -6,7 +6,7 @@ public class GameUI : MonoBehaviour
 {
     public Slider healthBar;
     public Text scoreText, scrapText;
-    public UnityEvent TimerComplete, NotEnoughFundsGatt, EnoughMoneyGatt, NotEnoughFundsMiss, EnoughMoneyMiss, NotEnoughFundsUpg, EnoughMoneyUpg;
+    public UnityEvent TimerComplete, NotEnoughFundsGatt, EnoughMoneyGatt, NotEnoughFundsMiss, EnoughMoneyMiss, NotEnoughFundsUpg, EnoughMoneyUpg, EnoughMoneyBar, NotEnoughFundsBar;
 
     public int playerScore = 30;
     public int minutes = 5;
@@ -125,6 +125,18 @@ public class GameUI : MonoBehaviour
         else
         {
             NotEnoughFundsUpg.Invoke();
+        }
+    }
+
+    public void BarricadeSpawn()
+    {
+        if (Scrap >= 20)
+        {
+            EnoughMoneyBar.Invoke();
+        }
+        else
+        {
+            NotEnoughFundsBar.Invoke();
         }
     }
 }
