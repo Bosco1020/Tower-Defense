@@ -266,7 +266,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  range: 6
+  range: 5.5
   rate: 1
   ifInRange:
     m_PersistentCalls:
@@ -314,7 +314,7 @@ MonoBehaviour:
   bulletDark1Prefab: {fileID: 39001314733072129, guid: ba1932ebb33753646b690f482fcdc2dc,
     type: 3}
   bulletSpawn: {fileID: 9071003481637920971}
-  fireTime: 1
+  fireTime: 3
   Firing:
     m_PersistentCalls:
       m_Calls:
@@ -434,10 +434,11 @@ AudioSource:
   m_GameObject: {fileID: 5466264424154321762}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ae36746d0c18f284c89969ebacdcc387,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 70f6099db85b4874eb179a6e3e64f7ca, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.094
+  m_Volume: 0.153
   m_Pitch: 1
   Loop: 0
   Mute: 0

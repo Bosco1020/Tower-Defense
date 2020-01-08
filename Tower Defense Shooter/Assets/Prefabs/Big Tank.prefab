@@ -40,7 +40,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6859616544997030699}
   - component: {fileID: 6859616544997030700}
-  - component: {fileID: 6859616544997030701}
   - component: {fileID: 6859616544997030702}
   - component: {fileID: 6859616544997030697}
   - component: {fileID: 6859616544997030698}
@@ -125,22 +124,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6859616544997030701
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6859616544997030689}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.02, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.23
 --- !u!114 &6859616544997030702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f529c128612804d878114f87a9e658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 12
+  health: 16
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -314,7 +297,7 @@ MonoBehaviour:
   bulletDark1Prefab: {fileID: 2025131731635977651, guid: 4512a9eeecfd96045a94c5c88eb6df89,
     type: 3}
   bulletSpawn: {fileID: 7569706497521633416}
-  fireTime: 2
+  fireTime: 5
   Firing:
     m_PersistentCalls:
       m_Calls:
@@ -434,10 +417,11 @@ AudioSource:
   m_GameObject: {fileID: 6859616544997030689}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: ae36746d0c18f284c89969ebacdcc387,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 70f6099db85b4874eb179a6e3e64f7ca, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.094
+  m_Volume: 0.173
   m_Pitch: 1
   Loop: 0
   Mute: 0
