@@ -3,24 +3,55 @@ using UnityEngine.Events;
 
 public class TimerEvent : MonoBehaviour
 {
-    public float time = 5, counter = 4;
-    public bool repeat = false;
+    public float time = 5, counter = 4, delay = 5;
+    public bool repeat = false, delayed = false;
     public UnityEvent onTimerComplete;
 
     public void Start()
     {
-        if(repeat)
+        if (delayed == true)
         {
-            InvokeRepeating("OnTimerComplete", 0, time);
+            InvokeRepeating("Delay", 0, 1);
         }
-        else
+        Spawn();
+    }
+
+    private void Spawn()
+    {
+        if (delayed == false)
         {
-            Invoke("OnTimerComplete", time);
+            if (repeat)
+            {
+                InvokeRepeating("OnTimerComplete", 0, time);
+            }
+            else
+            {
+                Invoke("OnTimerComplete", time);
+            }
+        }
+        else if (delay == 0)
+        {
+            CancelInvoke();
+            if (repeat)
+            {
+                InvokeRepeating("OnTimerComplete", 0, time);
+            }
+            else
+            {
+                Invoke("OnTimerComplete", time);
+            }
         }
     }
     private void OnTimerComplete()
     {
         onTimerComplete.Invoke();
+    }
+
+    private void Delay()
+    {
+        delay = delay - 1;
+        Spawn();
+        
     }
 
     private void countdown()

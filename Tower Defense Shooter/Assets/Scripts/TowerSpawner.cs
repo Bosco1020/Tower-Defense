@@ -46,6 +46,16 @@ public class TowerSpawner : MonoBehaviour
                 SpawnTurret.Invoke();
             }
         }
+
+        if (Input.GetKeyDown("q"))
+        {
+            transform.Rotate(0, 0, 90);
+        }
+
+        if (Input.GetKeyDown("e"))
+        {
+            transform.Rotate(0, 0, -90);
+        }
     }
 
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 793889691340112815}
   m_Layer: 13
   m_Name: Barrier
-  m_TagString: Untagged
+  m_TagString: TurrentFinal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

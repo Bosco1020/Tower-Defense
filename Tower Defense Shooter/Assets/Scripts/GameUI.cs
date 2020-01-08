@@ -11,7 +11,7 @@ public class GameUI : MonoBehaviour
     public int playerScore = 30;
     public int minutes = 5;
     public int Scrap = 0;
-    private bool firstGat = true, firstMiss = true, firstUpg = true;
+    private bool firstGat = true, firstMiss = true, firstUpg = true, firstBar = true;
     private void Start()
     {
         ScrapUpdate();
@@ -71,6 +71,7 @@ public class GameUI : MonoBehaviour
             {
                 Scrap = Scrap - 20;
                 EnoughMoneyGatt.Invoke();
+                ScrapUpdate();
             }
             else
             {
@@ -83,6 +84,7 @@ public class GameUI : MonoBehaviour
         {
             Scrap = Scrap - 40;
             EnoughMoneyGatt.Invoke();
+            ScrapUpdate();
         }
         else
         {
@@ -97,6 +99,7 @@ public class GameUI : MonoBehaviour
             {
                 Scrap = Scrap - 30;
                 EnoughMoneyMiss.Invoke();
+                ScrapUpdate();
             }
             else
             {
@@ -109,6 +112,7 @@ public class GameUI : MonoBehaviour
         {
             Scrap = Scrap - 60;
             EnoughMoneyMiss.Invoke();
+            ScrapUpdate();
         }
         else
         {
@@ -121,6 +125,7 @@ public class GameUI : MonoBehaviour
         if (Scrap >= 100)
         {
             EnoughMoneyUpg.Invoke();
+            ScrapUpdate();
         }
         else
         {
@@ -130,9 +135,24 @@ public class GameUI : MonoBehaviour
 
     public void BarricadeSpawn()
     {
-        if (Scrap >= 20)
+        if(firstBar == true)
         {
+            if (Scrap >= 10)
+            {
+                Scrap = Scrap - 10;
+                EnoughMoneyBar.Invoke();
+                ScrapUpdate();
+            }
+            else
+            {
+                NotEnoughFundsBar.Invoke();
+            }
+        }
+        else if (Scrap >= 20)
+        {
+            Scrap = Scrap - 20;
             EnoughMoneyBar.Invoke();
+            ScrapUpdate();
         }
         else
         {
