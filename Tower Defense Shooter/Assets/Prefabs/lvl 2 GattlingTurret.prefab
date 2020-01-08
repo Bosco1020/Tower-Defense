@@ -126,6 +126,9 @@ GameObject:
   - component: {fileID: 1509197121609978390}
   - component: {fileID: 10507000}
   - component: {fileID: -6237862550905787807}
+  - component: {fileID: 1666229902885781205}
+  - component: {fileID: 6837072302653258144}
+  - component: {fileID: 405502700875784633}
   m_Layer: 13
   m_Name: lvl 2 GattlingTurret
   m_TagString: TurrentFinal
@@ -423,6 +426,79 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1666229902885781205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509197121609978389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f529c128612804d878114f87a9e658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 405502700875784633}
+        m_MethodName: Spawn2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6837072302653258144}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnDamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  damage: 1
+--- !u!114 &6837072302653258144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509197121609978389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f405d9293e676984c828ab7739dd6324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &405502700875784633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509197121609978389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cd6407712d9ee42b3efd63c77e259c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 1494818136625558878, guid: ec5d0e892cdda9b428cf3bdf4db2bb9a,
+    type: 3}
+  adjustmentAngle: 0
 --- !u!1 &1509197121890204000
 GameObject:
   m_ObjectHideFlags: 0

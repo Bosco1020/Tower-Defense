@@ -17,7 +17,10 @@ public class Upgrader : MonoBehaviour
     }
     public void Clicked()
     {
-        spriteRenderer.sprite = sprite1;
+        if (sprite1 != null)
+        {
+            spriteRenderer.sprite = sprite1;
+        }
         ifClicked = true;
         valid = true;
         spriteRenderer.color = Color.red;

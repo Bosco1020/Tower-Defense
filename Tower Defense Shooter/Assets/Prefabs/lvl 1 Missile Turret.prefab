@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 1076109379}
   - component: {fileID: 1076109380}
   - component: {fileID: 1076109381}
+  - component: {fileID: 3734008036243404601}
+  - component: {fileID: 2993270423352032177}
+  - component: {fileID: 8150507388563836524}
   m_Layer: 13
   m_Name: lvl 1 Missile Turret
   m_TagString: Turret
@@ -274,6 +277,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f405d9293e676984c828ab7739dd6324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3734008036243404601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899955771540586858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f529c128612804d878114f87a9e658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8150507388563836524}
+        m_MethodName: Spawn2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1076109381}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnDamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  damage: 1
+--- !u!114 &2993270423352032177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899955771540586858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f405d9293e676984c828ab7739dd6324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8150507388563836524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899955771540586858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cd6407712d9ee42b3efd63c77e259c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 1494818136625558878, guid: ec5d0e892cdda9b428cf3bdf4db2bb9a,
+    type: 3}
+  adjustmentAngle: 0
 --- !u!1 &4899955771908406149
 GameObject:
   m_ObjectHideFlags: 0

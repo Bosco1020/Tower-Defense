@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8246200071835530273}
   - component: {fileID: 8246200071835530274}
   - component: {fileID: 793889691340112815}
+  - component: {fileID: 2627379184805018300}
+  - component: {fileID: 7014797829343609640}
   m_Layer: 13
   m_Name: Barrier
   m_TagString: TurrentFinal
@@ -107,3 +109,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.52, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &2627379184805018300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246200071835530276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f529c128612804d878114f87a9e658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7014797829343609640}
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnDamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  damage: 1
+--- !u!114 &7014797829343609640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246200071835530276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f405d9293e676984c828ab7739dd6324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
