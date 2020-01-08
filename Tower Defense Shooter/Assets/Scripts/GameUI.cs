@@ -142,6 +142,7 @@ public class GameUI : MonoBehaviour
                 Scrap = Scrap - 10;
                 EnoughMoneyBar.Invoke();
                 ScrapUpdate();
+                firstBar = false;
             }
             else
             {
