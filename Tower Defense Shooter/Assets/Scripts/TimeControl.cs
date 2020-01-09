@@ -6,7 +6,7 @@ public class TimeControl : MonoBehaviour
 {
     public void Freeze()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.5f;
     }
 
     public void Resume()
